@@ -43,9 +43,9 @@ float funcion_Division(float a,float b)
 
 
 };
-float funcion_Factorial(float a)
+int funcion_Factorial(int a)
 {
-    float valor;
+    int valor;
     if(a==0)
     {
         return 1;

@@ -32,26 +32,32 @@ int main()
                 system("pause");
 
             }
+
+
             operandoA=atof(auxOperandoA);
+
             flagSinA=1;
             break;
 
         //EN ESTE CASO PIDO EL VALOR DEL OPEANDO B Y VALIDO QUE SEA NUMERO
         case 2:
-           if(flagSinA == 1)
-           {
-            while(!funcion_getStringNumerosFlotantes("Ingrese una operando B : ",auxOperandoB))
+            if(flagSinA == 1)
             {
-                printf("ERROR- La opcion tiene que ser solo numeros\n\n");
-                system("pause");
+                while(!funcion_getStringNumerosFlotantes("Ingrese una operando B : ",auxOperandoB))
+                {
+                    printf("ERROR- La opcion tiene que ser solo numeros\n\n");
+                    system("pause");
+
+                }
+                operandoB=atof(auxOperandoB);
+                flagSinNumeros=1;
+
 
             }
-            operandoB=atof(auxOperandoB);
-            flagSinNumeros=1;
-           }else
-           {
-            printf("\nNo ingreso operando A, por favor ingrese nuevamente\n");
-           }
+            else
+            {
+                printf("\nNo ingreso operando A, por favor ingrese nuevamente\n");
+            }
 
             break;
         //EN ESTE CASO SE CALCULAN TODAS LAS OPERACIONES Y SE VALIDA QUE HAYAN INGRESADO LOS VALORES
@@ -65,8 +71,10 @@ int main()
                 division=funcion_Division(operandoA,operandoB);
 
 
-                    factorialA=funcion_Factorial(operandoA);
-                    factorialB=funcion_Factorial(operandoB);
+
+                factorialA=funcion_Factorial(operandoA);
+                factorialB=funcion_Factorial(operandoB);
+
 
 
             }
@@ -90,6 +98,7 @@ int main()
                 printf("\nLa resta es: %0.2f",resta);
                 printf("\nLa multiplicacion es: %0.2f",multiplicacion);
                 printf("\nLa division es: %0.2f",division);
+
                 printf("\nLa factorial de A es: %0.0f",factorialA);
                 printf("\nLa factorial de B es: %0.0f\n",factorialB);
 
@@ -105,6 +114,11 @@ int main()
             printf("Saliendo...");
             exit(-1);
             break;
+        default:
+
+            printf("Opcion invalida, ingrese un numero del uno al 5. \n") ;
+            system("pause");
+
         }
         printf("\n Desea continuar usando la calculadora? ");
 

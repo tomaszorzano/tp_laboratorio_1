@@ -27,7 +27,7 @@ float funcion_Division(float a,float b);
     \param Valor asignado a variable "a".
     \return Devuelve el resultado de la factorial de la variable.
 */
-float funcion_Factorial(float a);
+int funcion_Factorial(int a);
 
 /**
  * \brief Solicita un texto al usuario y lo devuelve
